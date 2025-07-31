@@ -1,0 +1,124 @@
+:root {
+  --bg: #111;
+  --text: #f9f9f9;
+  --accent: #d4af37; /* gold */
+  --card: rgba(255, 255, 255, 0.05);
+  --shadow: rgba(255, 215, 0, 0.2);
+}
+
+body.light {
+  --bg: #f4f4f4;
+  --text: #111;
+  --accent: #b8860b;
+  --card: #fff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.4s ease-in-out;
+}
+
+.container {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--accent);
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: bold;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+#hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--card);
+  border-radius: 15px;
+  box-shadow: 0 0 15px var(--shadow);
+  margin-top: 1rem;
+}
+
+h1, h2 {
+  color: var(--accent);
+}
+
+.btn {
+  padding: 0.8rem 1.8rem;
+  background: var(--accent);
+  color: #111;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.glow-btn {
+  box-shadow: 0 0 20px var(--accent);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #fff;
+  color: var(--accent);
+}
+
+.project-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  background: var(--bg);
+  color: var(--text);
+  border-top: 1px solid var(--accent);
+}

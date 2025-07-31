@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Product Page</title>
+  <style>
+    :root {
+      --primary: #f4f4f9;
+      --accent: #b49c73;
+      --text: #1a1a1a;
+      --card-bg: #ffffff;
+      --hover-glow: rgba(180, 156, 115, 0.2);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--primary);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--accent);
+      color: white;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 3rem;
+      background: linear-gradient(to right, #f0e6d2, #fff);
+    }
+
+    .hero-text {
+      max-width: 50%;
+    }
+
+    .hero-text h2 {
+      font-size: 3rem;
+      color: var(--text);
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+    }
+
+    .product-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 3rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px var(--hover-glow);
+    }
+
+    .card h3 {
+      color: var(--accent);
+    }
+
+    .card p {
+      font-size: 1rem;
+    }
+
+    .add-btn {
+      margin-top: 1rem;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 12px;
+      background: var(--accent);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .add-btn:hover {
+      background: #a3865a;
+      transform: scale(1.05);
+    }
+
+    .cart-animation {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background-color: var(--accent);
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      display: none;
+    }
+
+    .customer-support {
+      padding: 3rem;
+      background: #fffbe7;
+    }
+
+    .customer-support h3 {
+      color: #b49c73;
+      margin-bottom: 1rem;
+    }
+
+    .customer-support p {
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: #b49c73;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Luxora</h1>
+    <nav>
+      <a href="#" style="color:white; margin-right: 20px">Home</a>
+      <a href="#products" style="color:white; margin-right: 20px">Products</a>
+      <a href="#support" style="color:white">Support</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Luxury, Redefined</h2>
+      <p>Discover exclusive and premium quality products crafted for royalty. Each piece tells a story of elegance and excellence.</p>
+    </div>
+    <img src="https://source.unsplash.com/400x300/?luxury,product" alt="Luxury Product" style="border-radius: 20px;" />
+  </section>
+
+  <section id="products" class="product-gallery">
+    <div class="card">
+      <h3>Premium Watch</h3>
+      <p>Crafted with Swiss movement, leather strap and sapphire glass.</p>
+      <button class="add-btn" onclick="showCart()">Add to Cart</button>
+    </div>
+    <div class="card">
+      <h3>Luxury Perfume</h3>
+      <p>Exclusive blend of exotic notes from France and Italy.</p>
+      <button class="add-btn" onclick="showCart()">Add to Cart</button>
+    </div>
+    <div class="card">
+      <h3>Designer Handbag</h3>
+      <p>Elegant and versatile, made from premium Italian leather.</p>
+      <button class="add-btn" onclick="showCart()">Add to Cart</button>
+    </div>
+    <div class="card">
+      <h3>Classic Sunglasses</h3>
+      <p>Anti-glare, UV-protected lenses with iconic design frame.</p>
+      <button class="add-btn" onclick="showCart()">Add to Cart</button>
+    </div>
+  </section>
+
+  <section id="support" class="customer-support">
+    <h3>24/7 Customer Support</h3>
+    <p>Need help? Our luxury customer service agents are available any time. Connect with us via chat, email, or toll-free number for personalized assistance.</p>
+  </section>
+
+  <div id="cartMessage" class="cart-animation">Item added to cart!</div>
+
+  <footer>
+    <p>© 2025 Luxora. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function showCart() {
+      const msg = document.getElementById("cartMessage");
+      msg.style.display = "block";
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 2000);
+    }
+  </script>
+</body>
+
+</html>
